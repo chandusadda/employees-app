@@ -1,0 +1,196 @@
+.footer {
+  background: rgb(255, 255, 255);
+  border-top: 1px solid rgb(218, 224, 230);
+  padding: 1rem 0.75rem;
+  .footer-container {
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+    .footer-grid-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+      .list-inline {
+        padding-left: 0;
+        list-style: none;
+        margin-bottom: 0;
+        margin-top: 0;
+        .list-inline-item {
+          display: inline-block;
+        }
+        .list-inline-item:not(:last-child) {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+.text-muted {
+  --bs-text-opacity: 1;
+  color: rgb(103, 121, 134);
+  text-decoration: none;
+}
+
+.program {
+  color: #000;
+  font-size: larger;
+  margin-top: 5rem;
+}
+
+.nav-main {
+  .MuiButton-root {
+    color: #fff;
+    // margin-bottom: 0.6rem;
+  }
+}
+
+.page-main {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  min-width: 0;
+  transition: margin-left 0.35s ease-in-out, left 0.35s ease-in-out;
+  flex-direction: column;
+  .content {
+    min-height: 80vh;
+    padding: 3rem;
+    background-color: #f5f5f5;
+  }
+}
+
+.MuiTablePagination-select {
+  option {
+    padding-left: 8px;
+    padding-right: 24px;
+    text-align: center;
+    -webkit-text-align-last: center;
+    text-align-last: center;
+  }
+}
+
+body {
+  .p-0 {
+    padding: 0rem;
+  }
+
+  .pl-2 {
+    padding-left: 0.5rem;
+  }
+
+  .action-icons {
+    cursor: pointer;
+    min-width: 35px;
+  }
+
+  a:-webkit-any-link {
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .float-right {
+    float: right;
+  }
+
+  .flex-grow-1 {
+    flex-grow: 1;
+  }
+
+  .ml-1 {
+    margin-left: 0.25rem;
+  }
+
+  .mr-2 {
+    margin-right: 0.5rem;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .employees {
+    padding: 1rem;
+    .add-employee-div {
+      margin-bottom: 1rem;
+      padding: 1rem;
+    }
+  }
+
+  .mb-2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .mt-2 {
+    margin-top: 0.5rem;
+  }
+
+  .mt-1 {
+    margin-top: 0.25rem;
+  }
+
+  .float-right {
+    float: right;
+  }
+
+  .error {
+    color: #d32f2f;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1.66;
+    letter-spacing: 0.03333em;
+    text-align: left;
+    margin-top: 4px;
+    margin-right: 14px;
+    margin-bottom: 0;
+    margin-left: 14px;
+  }
+
+  .react-datepicker-wrapper {
+    input {
+      height: calc(1.8125rem + 6px);
+      box-shadow: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+    }
+    input:hover {
+      border: 1px solid #000000de;
+    }
+    input:focus {
+      border: 2px solid #0080ff;
+    }
+    .label {
+      background-color: #fff;
+      transition: all 0.2s ease-in-out;
+      transform: translate3d(10px, -28px, 0);
+      pointer-events: none;
+      margin: 0;
+      padding: 0 5px;
+      width: auto;
+    }
+    input:focus + .label {
+      font-size: 10px;
+      transform: translate3d(10px, -46px, 0);
+      width: auto;
+      text-decoration: blink;
+    }
+  }
+  .pt-0 {
+    padding-top: 0rem;
+  }
+  .main-card-link {
+    float: left;
+    padding: 2rem;
+    .main-card {
+      max-width: 300px;
+      .main-icon {
+        svg {
+          height: 50px;
+          width: 50px;
+        }
+      }
+    }
+  }
+}
