@@ -1,6 +1,6 @@
 import { Container, Grid } from "@mui/material";
 
-const Footer = () => {
+const Footer = (): JSX.Element => {
   const redirectUrl = "https://reactjs.org";
   return (
     <footer className="footer">

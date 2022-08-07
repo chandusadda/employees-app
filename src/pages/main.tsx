@@ -1,7 +1,7 @@
 import RouteNames from "../RouteNames";
 import PageCard from "./common/pageCard";
 
-function Main() {
+function Main(): JSX.Element {
   return (
     <div className="Main">
       <PageCard

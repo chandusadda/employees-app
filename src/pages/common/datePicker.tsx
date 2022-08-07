@@ -5,7 +5,7 @@ import { createElement } from "react";
 import { Button, IconButton, Tooltip } from "@mui/material";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 
-function DatePicker(props: any) {
+function DatePicker(props: any): JSX.Element {
   const { label, name, ...rest } = props;
   return (
     <div className="form-control">

@@ -6,7 +6,7 @@ import InputField from "./inputField";
  *
  * @param props will have all props of input
  */
-function FormikControl(props: any) {
+function FormikControl(props: any): JSX.Element | null {
   const { control, ...rest } = props;
   switch (control) {
     case "input":

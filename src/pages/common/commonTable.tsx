@@ -65,7 +65,7 @@ interface TablePaginationActionsProps {
  *
  * @param props to pass Table Pagination Actions Props
  */
-function TablePaginationActions(props: TablePaginationActionsProps) {
+function TablePaginationActions(props: TablePaginationActionsProps): JSX.Element {
   const theme = useTheme();
   const { count, page, rowsPerPage, onPageChange } = props;
 
@@ -76,7 +76,7 @@ function TablePaginationActions(props: TablePaginationActionsProps) {
    */
   const handleFirstPageButtonClick = (
     event: React.MouseEvent<HTMLButtonElement>
-  ) => {
+  ): void => {
     onPageChange(event, 0);
   };
 
@@ -87,7 +87,7 @@ function TablePaginationActions(props: TablePaginationActionsProps) {
    */
   const handleBackButtonClick = (
     event: React.MouseEvent<HTMLButtonElement>
-  ) => {
+  ): void => {
     onPageChange(event, page - 1);
   };
 
@@ -98,7 +98,7 @@ function TablePaginationActions(props: TablePaginationActionsProps) {
    */
   const handleNextButtonClick = (
     event: React.MouseEvent<HTMLButtonElement>
-  ) => {
+  ): void => {
     onPageChange(event, page + 1);
   };
 
@@ -109,7 +109,7 @@ function TablePaginationActions(props: TablePaginationActionsProps) {
    */
   const handleLastPageButtonClick = (
     event: React.MouseEvent<HTMLButtonElement>
-  ) => {
+  ): void => {
     onPageChange(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
   };
 
@@ -155,7 +155,7 @@ function TablePaginationActions(props: TablePaginationActionsProps) {
   );
 }
 
-const CommonTable = (props: any) => {
+const CommonTable = (props: any): JSX.Element => {
   const {
     empHearder,
     employeesDataLoading,

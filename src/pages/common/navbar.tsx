@@ -11,7 +11,7 @@ import logo from "../../logo.svg";
 import { useHistory, Link } from "react-router-dom";
 import RouteNames from "../../RouteNames";
 
-const NavbarComponent = () => {
+const NavbarComponent = (): JSX.Element => {
   const history = useHistory();
 
   // navigate to main page

@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import Snackbar, { SnackbarOrigin } from "@mui/material/Snackbar";
 import { Alert } from "@mui/material";
+import { snackBarProps } from "./types";
 
 export interface State extends SnackbarOrigin {
   open: boolean;
 }
 
-export default function PositionedSnackbar({ snackMsg, openSnack, setOpenSnack, severity }: any) {
+export default function PositionedSnackbar({ snackMsg, openSnack, setOpenSnack, severity }: snackBarProps): JSX.Element {
   const [state, setState] = useState<State>({
     open: false,
     vertical: "top",

@@ -1,5 +1,6 @@
 import Navbar from "./common/navbar";
 import Footer from "./common/footer";
+import { mainStruct } from "./common/types";
 
 /**
  * Main is used to create main layout of the page
@@ -7,7 +8,7 @@ import Footer from "./common/footer";
  * @param className is the class to be added to it
  * @param children is the child component to render
  */
-const Main = ({ className, children }: any) => (
+const Main = ({ className, children }: mainStruct): JSX.Element => (
   <div className={`page-main ${className ? className : ""}`}>{children}</div>
 );
 
@@ -16,10 +17,10 @@ const Main = ({ className, children }: any) => (
  *
  * @param children is the child component to render
  */
-const Dashboard = ({ children }: any) => (
+const Dashboard = ({ children }: mainStruct): JSX.Element => (
   <>
     <div className={"wrapper "}>
-      <Main>
+      <Main className={""}>
         <Navbar />
         <div className="content">{children}</div>
         <Footer />

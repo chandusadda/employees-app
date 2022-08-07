@@ -1,11 +1,12 @@
 import Axios from "axios";
+import { axiosHeaderStruct } from "../common/types";
 
 /**
  * isValidArray is to check is valid array
  *
  * @param arr is the array to check
  */
-export const isValidArray = (arr: []) => {
+export const isValidArray = (arr: []): boolean => {
   return arr && Array.isArray(arr) && arr.length > 0;
 };
 
@@ -14,7 +15,7 @@ export const isValidArray = (arr: []) => {
  *
  * @param obj is the object to check
  */
-export const isValidObject = (obj: {}) => {
+export const isValidObject = (obj: {}): boolean => {
   return obj !== null && typeof obj === "object" && Object.keys(obj).length > 0;
 };
 
@@ -23,12 +24,12 @@ export const isValidObject = (obj: {}) => {
  *
  * @param str is the string to check
  */
-export const isValidString = (str: string) => {
+export const isValidString = (str: string): boolean | string => {
   return str && typeof str === "string" && str.length > 0;
 };
 
 //getHeaderWithToken to form header information
-const getHeader= () => {
+const getHeader= (): {} => {
   const headers = {
     "Content-Type": "application/json",
   };
@@ -42,7 +43,7 @@ const getHeader= () => {
  * @param reqType is used to get request type
  * @param obj is used to get object to post
  */
-const getAxiosHeader = (url: string, reqType: string, obj: {} | undefined) => {
+const getAxiosHeader = (url: string, reqType: string, obj: {} | undefined): axiosHeaderStruct => {
   const cancelToken = Axios.CancelToken.source();
   const reqObj = {
     method: reqType,

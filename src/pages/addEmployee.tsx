@@ -28,7 +28,7 @@ const AddEmployee = ({
   currentEmpData,
   postEmployeesData,
   setCurrentEmpData,
-}: any) => {
+}: any): JSX.Element => {
   const initialValues = {
     name: "",
     email: "",
@@ -55,7 +55,7 @@ const AddEmployee = ({
   }, [currentEmpData]);
 
   // will close the add form & resets update data if present
-  const cancelForm = () => {
+  const cancelForm = (): void => {
     setCurrentEmpData(undefined);
     hideAddEmployee();
   };

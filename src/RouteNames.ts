@@ -1,4 +1,4 @@
-export default {
+ const RouteNames = {
     main: "/main",
     employeesTittle: "Employees",
     employees: "/employees",
@@ -6,3 +6,4 @@ export default {
     deletedEmployees: "/deleted-employees",
   };
   
+  export default RouteNames;

@@ -6,19 +6,20 @@ import RefreshIcon from "@mui/icons-material/Refresh";
 import { getSoftDeletedEmps } from "./redux/actions/employeeActions";
 import { isValidObject } from "./utils/utils";
 import CommonTable from "./common/commonTable";
+import { empsStruct } from "./common/types";
 
-function SoftDeleteEmployees() {
+function SoftDeleteEmployees(): JSX.Element {
   const dispatch = useDispatch();
-  const [empData, setEmpData]: any = useState({});
+  const [empData, setEmpData] = useState<empsStruct | {}>({});
   const softDelEmpsData = useSelector(
     (store: any) => store.softDelEmpsData.data
   );
   const softDelEmpsDataLoading = useSelector(
     (store: any) => store.softDelEmpsData.loading
   );
-  const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(5);
-  const [empCount, setEmpCount] = useState(0);
+  const [page, setPage] = useState<number>(0);
+  const [rowsPerPage, setRowsPerPage] = useState<number>(5);
+  const [empCount, setEmpCount] = useState<number>(0);
 
   /**
    * handleChangePage is used to change page count
@@ -29,7 +30,7 @@ function SoftDeleteEmployees() {
   const handleChangePage = (
     event: React.MouseEvent<HTMLButtonElement> | null,
     newPage: number
-  ) => {
+  ): void => {
     setPage(newPage);
   };
 
@@ -40,7 +41,7 @@ function SoftDeleteEmployees() {
    */
   const handleChangeRowsPerPage = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  ): void => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
@@ -76,7 +77,7 @@ function SoftDeleteEmployees() {
    * refreshDelEmps will refresh soft delete employee table
    *
    */
-  const refreshDelEmps = () => {
+  const refreshDelEmps = (): void => {
     dispatch(getSoftDeletedEmps());
   };
 

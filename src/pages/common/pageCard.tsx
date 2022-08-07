@@ -5,8 +5,9 @@ import { CardActionArea, IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 import GroupIcon from "@mui/icons-material/Group";
 import GroupRemoveIcon from "@mui/icons-material/GroupRemove";
+import { pageCardType } from "./types";
 
-const PageCard = (props: any) => {
+const PageCard = (props: pageCardType): JSX.Element => {
   const { toLink, name, description } = props;
   return (
     <Link to={toLink} className="text-decoration-none text-dark main-card-link">

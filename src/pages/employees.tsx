@@ -18,23 +18,24 @@ import {
 import AddEmployee from "./addEmployee";
 import PositionedSnackbar from "./common/snackbar";
 import CommonTable from "./common/commonTable";
+import { AlertColor, empsStruct, empStruct } from "./common/types";
 
-function Employees() {
+function Employees(): JSX.Element {
   const dispatch = useDispatch();
-  const [empData, setEmpData]: any = useState({});
+  const [empData, setEmpData] = useState<empsStruct | {}>({});
   const employeesData = useSelector((store: any) => store.employeesData.data);
   const employeesDataLoading = useSelector(
     (store: any) => store.employeesData.loading
   );
-  const [empSubmiting, setEmpSubmiting] = useState(false);
-  const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(5);
-  const [empCount, setEmpCount] = useState(0);
-  const [showAddEmployee, setShowAddEmployee] = useState(false);
-  const [currentEmpData, setCurrentEmpData]: any = useState(undefined);
-  const [openSnack, setOpenSnack] = useState(false);
-  const [snackMsg, setSnackMsg] = useState("");
-  const [severity, setSeverity] = useState("success");
+  const [empSubmiting, setEmpSubmiting] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(0);
+  const [rowsPerPage, setRowsPerPage] = useState<number>(5);
+  const [empCount, setEmpCount] = useState<number>(0);
+  const [showAddEmployee, setShowAddEmployee] = useState<boolean>(false);
+  const [currentEmpData, setCurrentEmpData] = useState<empStruct | undefined>(undefined);
+  const [openSnack, setOpenSnack] = useState<boolean>(false);
+  const [snackMsg, setSnackMsg] = useState<string>("");
+  const [severity, setSeverity] = useState<AlertColor>("success");
 
   useEffect(() => {
     if (!isValidObject(employeesData)) {
@@ -60,13 +61,13 @@ function Employees() {
    *
    * @param obj will have employee object to create/update an employee.
    */
-  const postEmployeesData = async (obj: any) => {
+  const postEmployeesData = async (obj: empStruct) => {
     const url = `http://142.132.229.249:3000/employees${
       obj._id ? "/" + obj._id : ""
     }`;
     const fnlVals = JSON.stringify(obj, null, 2);
     await fetchWithAxios(url, obj._id ? "PATCH" : "POST", fnlVals)
-      .then((employees: any) => {
+      .then((employees: empStruct) => {
         if (isValidObject(employees)) {
           setOpenSnack(true);
           setSeverity("success");
@@ -109,7 +110,7 @@ function Employees() {
   const handleChangePage = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     newPage: number
-  ) => {
+  ): void => {
     setPage(newPage);
   };
 
@@ -120,7 +121,7 @@ function Employees() {
    */
   const handleChangeRowsPerPage = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  ): void => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
@@ -143,7 +144,7 @@ function Employees() {
     const url = `http://142.132.229.249:3000/employees/soft-delete/${id}`;
     setEmpSubmiting(true);
     await fetchWithAxios(url, "DELETE")
-      .then((employees: any) => {
+      .then((employees: empStruct) => {
         setEmpSubmiting(false);
         if (isValidObject(employees)) {
           setOpenSnack(true);
@@ -177,7 +178,7 @@ function Employees() {
    *
    * @param row will give current row data.
    */
-  const showActions = (row: any) => {
+  const showActions = (row: empStruct): JSX.Element => {
     return (
       <>
         <Button
@@ -208,7 +209,7 @@ function Employees() {
    * AddEmployeeFn will add employee form
    *
    */
-  const AddEmployeeFn = () => {
+  const AddEmployeeFn = (): void => {
     setShowAddEmployee(true);
   };
 
@@ -216,7 +217,7 @@ function Employees() {
    * hideAddEmployee will hide add employee form
    *
    */
-  const hideAddEmployee = () => {
+  const hideAddEmployee = (): void => {
     setShowAddEmployee(false);
   };
 
@@ -224,7 +225,7 @@ function Employees() {
    * refreshEmps will refresh employee table
    *
    */
-  const refreshEmps = () => {
+  const refreshEmps = (): void => {
     dispatch(getEmployeeDetails());
   };
 

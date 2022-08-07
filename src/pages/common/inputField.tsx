@@ -2,7 +2,7 @@ import { TextField } from "@mui/material";
 import { getIn } from "formik";
 import { isValidString } from "../utils/utils";
 
-function InputField(props: any) {
+function InputField(props: any): JSX.Element {
   const { label, name, type, nested, formik } = props;
   if (nested) {
     const splitName = isValidString(name) && name.split(".");
