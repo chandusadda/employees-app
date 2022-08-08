@@ -2,7 +2,7 @@ import { put, takeLatest } from "redux-saga/effects";
 import { fetchWithAxios } from "../../utils/utils";
 import * as types from "../actions/actionTypes";
 
-const baseUrl = "http://142.132.229.249:3000";
+export const baseUrl = "http://142.132.229.249:3000";
 
 //employeeInfo get employees list
 export function* employeeInfo() {
