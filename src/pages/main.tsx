@@ -3,7 +3,7 @@ import PageCard from "./common/pageCard";
 
 function Main(): JSX.Element {
   return (
-    <div className="Main">
+    <div className="Main" data-testid="app-main-div">
       <PageCard
         toLink={RouteNames.employees}
         name={RouteNames.employeesTittle}

@@ -230,7 +230,7 @@ function Employees(): JSX.Element {
   };
 
   return (
-    <Box component={Paper} elevation={3} className="employees">
+    <Box component={Paper} elevation={3} className="employees" data-testid="emp-main-div">
       {showAddEmployee && (
         <Box component={Paper} elevation={6} className="add-employee-div">
           <AddEmployee

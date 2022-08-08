@@ -82,7 +82,7 @@ function SoftDeleteEmployees(): JSX.Element {
   };
 
   return (
-    <Box component={Paper} elevation={3} className="employees">
+    <Box component={Paper} elevation={3} className="employees" data-testid="del-emp-div">
       <Tooltip title="Refresh Soft Deleted Employees" placement="top" arrow>
         <IconButton
           onClick={refreshDelEmps}

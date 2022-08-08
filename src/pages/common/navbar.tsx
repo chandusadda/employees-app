@@ -35,6 +35,7 @@ const NavbarComponent = (): JSX.Element => {
               <Button
                 component={Link}
                 to={RouteNames.main}
+                data-testid="nav-to-main"
               >
                 <img onClick={navigateToPage} src={logo} className="App-logo" alt="logo" />
               </Button>
@@ -42,6 +43,7 @@ const NavbarComponent = (): JSX.Element => {
                 className="nav-btns"
                 component={Link}
                 to={RouteNames.employees}
+                data-testid="nav-to-employees"
               >
                 {RouteNames.employeesTittle}
               </Button>
@@ -49,6 +51,7 @@ const NavbarComponent = (): JSX.Element => {
                 className="nav-btns"
                 component={Link}
                 to={RouteNames.deletedEmployees}
+                data-testid="nav-to-delEmployees"
               >
                 {RouteNames.employeesDelete}
               </Button>{" "}
